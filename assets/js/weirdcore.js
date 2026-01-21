@@ -174,10 +174,14 @@ class WeirdcoreManager {
     }
 }
 
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    new WeirdcoreManager();
-});
+// Initialize when DOM is ready AND after a small delay to ensure everything is loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => new WeirdcoreManager(), 100);
+    });
+} else {
+    setTimeout(() => new WeirdcoreManager(), 100);
+}
 
 // Also handle page visibility to enhance the effect
 document.addEventListener('visibilitychange', () => {
