@@ -38,16 +38,131 @@
                     <div class="toc">
                         <div class="toc-title">Contents</div>
                         <ol class="toc-list">
+                            <li><a href="#Dashing">Dashing</a>
+                                <ol>
+                                    <li>
+                                        <a href="#GroundDash">Ground Dash</a>
+                                    </li>
+                                    <li>
+                                        <a href="#AirDash">Air Dash</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><a href="#DASH TECH">Dash Tech</a>
+                                <ol>
+                                    <li>
+                                        <a href="#Super Dash">Super Dash</a>
+                                    </li>
+                                    <li>
+                                        <a href="#Wave Dash">Wave Dash</a>
+                                    </li>
+                                    <li><a href="Extended Dashes">Extended Dashes</a></li>
+                                </ol>
+                            </li>
                             <li><a href="#Damage Calculation">Damage Calculation</a>
                                 <ol>
                                     <li><a href="#Strength Calculation Order">Strength Calculation Order</a></li>
                                     <li><a href="#Damage Calculation Order">Damage Calculation Order</a></li>
                                 </ol>
                             </li>
+                            <li><a href="#Cooldown">Cooldown</a>
+                                <ol>
+                                    <li><a href="#Cooldown Calculation Order">CD Calculation Order</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="#Global Cool Down">Global Cool Down (GCD)</a>
+                            <li><a href="#Global Cooldown Calculation Order">GCD Calculation Order</a></li>
+                            </li>
+                            <li><a href="#Off Global Cool Down">Off Global Cool Down (oGCD)</a>
+                                <ol>
+                                    <li><a href="oGCD Length">oGCD Length</a></li>
+                                </ol>
+                            </li>
                         </ol>
                     </div>
 
                     <!-- Article Content -->
+                    <section id="Dashing">
+                        <h2>Dashing</h2>
+                        <p>Dashing is an omni-directional tool that will propel the player in any given direction
+                            relative to the camera</p>
+                        <ul>
+                            <li>Dashing will increase your character's [LINEAR_VELOCITY] attribute significantly</li>
+                            <li>Dashing on the ground and in the air has drastically different effects
+                                <ul>
+                                    <b>
+                                        <li>the blue outline indicates that you cannot perform a dash</li>
+                                    </b>
+                                    <li>Note that despite being different dashes they share the same cooldown</li>
+                                    <li>You must be on the ground for the DashCD to reset</li>
+                                </ul>
+                            </li>
+
+                            <li>Dashing does in fact NOT give you invulnerability</li>
+                            <li>Neutral Dashing is performed by Dashing without pressing any directional inputs</li>
+                        </ul>
+                        <h3 id="GroundDash">GROUND DASH</h3>
+                        Ground Dash is performed when <b>INITIATING</b> a dash from the ground regardless of where the
+                        dash leads you.
+                        <ul>
+                            <li>By default Ground Dash's Cooldown is 0.8s
+                                <ul>
+                                    <li>Ground Dashing off a ledge will prevent you from replenishing your Dash CD
+                                        leaving you helpless in the air</li>
+                                </ul>
+                            </li>
+                            <li>Ground Dash is heavily influenced by ground friction. Surfaces like [ICE] has little to
+                                no friction</li>
+                            <li>Neutral Ground Dash will always give you a forwards dash input</li>
+                        </ul>
+                        <h3 id="AirDash">AIR DASH</h3>
+                        AIR Dash is performed when <b>INITIATING</b> a dash from the air regardless of where the dash
+                        leads you.
+                        <ul>
+                            <li>Air Dashing covers much more distance than Ground Dashing due to the lack of air
+                                friction
+                                <ul>
+                                    <li>
+                                        Air Dash increases the ground state's DecelerationTime dramatically for the
+                                        first 0.2s of activation. This knowledge is crucial to understanding the timing
+                                        of the <a href="#Wave Dash">[WAVEDASH]</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                Air Dash doesn't have a Cooldown, you cannot dash until you reach a ground state
+                            </li>
+                            <li>Neutral Air Dash will make you dash where the camera is pointing regardless of XYZ axis
+                                <ul>
+                                    <li>
+                                        This implies that if you dash directly on the Y axis you will not cover much
+                                        ground horizontally, but much more vertically.
+                                    </li>
+                                    <li>
+                                        Holding forwards before an Air Dash will favor horizontal velocity and add a
+                                        forwards vector to your dash making it easier to <a href="#Wave Dash">[WAVEDASH]</a> even if the camera
+                                        is facing the Y axis.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <h2 id="DASH TECH">DASH TECH</h3>
+                            <p>
+                                Dash Techs require a <a href="#Dashing">Dash</a> off cooldown to perform
+                            </p>
+                        <h3 id="Super Dash">Super Dash</h3>
+                            <p>To perform a superdash, ground dash and jump before the dash ends. This will propel you much further than if you had just jumped while running</p>
+                            <p>Superdashes can be extended</p>
+                        
+                        <h3 id="Wave Dash">Wave Dash</h3>
+                        <p>To perform a wave dash, Air Dash diagonally into the ground and jump within 0.2s of the dash's initiation.</p>
+                        <p>To reach the highest speed of wavedashes you have to juggle having the right angle and timing your jump input as early as possible when touching the ground</p>
+                        <p>Wavedashes can be extended</p>
+                        <h3 id="Extended Dashes">Extended Dashes</h3>
+                        <p>Extended Dashes from Ground Dashes are performed by jumping 0.8 seconds after dashing, keeping the superdash momentum and having another dash in the pocket this is indicated by the character being highlighted when the Ground Dash goes off cooldown</p>
+                        <p>All air dashes can be extended by simply dashing into the ground.</p>
+                    </section>
                     <section id="Damage Calculation">
                         <h2>Damage Calculation</h2>
                         <p>There are a lot of abilities, Items, status effects and modifiers that can alter your damage.
@@ -90,7 +205,8 @@
                             </li>
                             <li>
                                 <h4>Status Effects</h4>
-                                <p>+% bonuses from buffs are added together seperately then multiplied onto the current number</p>
+                                <p>+% bonuses from buffs are added together seperately then multiplied onto the current
+                                    number</p>
                                 <ul>
                                     <li>
                                         <p>
@@ -99,11 +215,14 @@
                                     </li>
                                     <li>
                                         <p>
-                                            Buffs affect the ability/item before use. Meaning when the ability is used,
-                                            the damage for the buff will linger for the loot or item's attack duration
-                                            even if the buff runs out of time. This also means that if you apply a buff
-                                            whilst an ability/loot's attack duration it will not be applied to that
-                                            specific attack cycle.
+                                            Buffs are applied to abilities/items before they are used. Once an ability
+                                            is activated, the buff's damage bonus persists for the entire attack
+                                            duration,
+                                            even if the buff expires during the attack. However, if you apply a buff
+                                            while
+                                            an ability or loot item is already attacking, it will not affect that
+                                            ongoing
+                                            attack cycle.
                                         </p>
                                     </li>
                                 </ul>
@@ -145,12 +264,86 @@
                             </li>
                             <li>
                                 <h4>Debuff Status Effects</h4>
-                                <p>+% bonuses from buffs are added together then multiply the damage after everything else</p>
+                                <p>+% bonuses from buffs are added together then multiply the damage after everything
+                                    else</p>
                             </li>
                         </ol>
 
                     </section>
 
+                    <section id="Cooldown">
+                        <h2>Cooldown</h2>
+                        <p>
+                            <b>Cooldown</b>(CD), mutually exclusive to <a href="#Global Cool Down">Global Cool Down</a>,
+                            is the time required for abilities or items to be available again.
+                        <ul>
+                            <li>The minimum CD for loot that activates on a cooldown is 1s</li>
+                            <li>On cooldown resets, there is a 200ms delay between the reset proc and the actual reset
+                            </li>
+                            <li>[CD REDUCTION ITEM] will not affect loot that cannot be affected by cooldown resets</li>
+                        </ul>
+                        <h3 id="Cooldown Calculation Order">Cooldown Calculation Order</h3>
+                        <ol>
+                            <b>
+                                <li>Items that add or substract cooldowns</li>
+                            </b>
+                            <b>
+                                <li>Items that [OVERRIDE] CD to a fixed amount</li>
+                            </b>
+                            <b>
+                                <li>Modifiers that have the [CONSTANT] effect making loot unable to change their
+                                    Cooldown</li>
+                            </b>
+                        </ol>
+                        </p>
+                    </section>
+
+                    <section id="Global Cool Down">
+                        <h2>Global Cool Down</h2>
+                        <p>
+                            Global cool down (GCD) is the time you have to wait between using GCD abilities. Each
+                            ability has a seperate GCD when used
+                        <ul>
+                            <li>The minimum GCD for an ability with a non-zero GCD is 0.3s</li>
+                            <li>This system is common in MMORPG's. Other games might use notions like
+                                "startup/windup" and
+                                "recoveries" that usually prevent two actions overlapping eachother.</li>
+                        </ul>
+                        <h3 id="Global Cooldown Calculation Order">Global Cooldown Calculation Order</h3>
+                        <ol>
+                            <b>
+                                <li>Items that add GCD</li>
+                            </b>
+                            <b>
+                                <li>Items that multiply GCD</li>
+                            </b>
+                            <b>
+                                <li>Items that [OVERRIDE] GCD to a fixed amount</li>
+                            </b>
+                            <b>
+                                <li>Buffs that [OVERRIDE] GCD to a flat value</li>
+                            </b>
+                            <b>
+                                <li>OnHit Items that [OVERRIDE] GCD to a fixed amount</li>
+                            </b>
+                        </ol>
+
+                        </p>
+                    </section>
+
+                    <section id="Off Global Cool Down">
+                        <h2>Off Global Cool Down</h2>
+                        <p>
+                            Off Global cool down (oGCD) includes all defensive abilities and 0s GCD abilities. oGCD's
+                            can be used at any point in time regardless of non-0s <a href="#Global Cool Down">GCD</a>'s
+                        <ul>
+                            <li>oGCD attacks usually come from Modifiers that turn the GCD into a normal CoolDown</li>
+                            <li>oGCD's fully ignore GCD increases from items</li>
+                        </ul>
+                        </p>
+                        <h3 id="oGCD Length">oGCD Length</h3>
+                        <p>oGCD's usually have a hidden cooldown of 0.8s for performance reasons</p>
+                    </section>
                     <!-- Navbox placeholder -->
                     <div class="navbox-placeholder"></div>
                 </article>
