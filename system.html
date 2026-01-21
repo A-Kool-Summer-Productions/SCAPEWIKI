@@ -25,19 +25,121 @@
                         From AKS
                     </div>
 
+                    <!-- Table of Contents -->
+                    <div class="toc">
+                        <div class="toc-title">Contents</div>
+                        <ol class="toc-list">
+                            <li><a href="#Damage Calculation">Damage Calculation</a>
+                                <ol>
+                                    <li><a href="#Strength Calculation Order">Strength Calculation Order</a></li>
+                                    <li><a href="#Damage Calculation Order">Damage Calculation Order</a></li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+
                     <!-- Article Content -->
-                    <section id="core-systems">
-                        <h2>Core Systems</h2>
-                        <p>This page covers the core gameplay mechanics of [S]_C.A.P.E.</p>
-                        
-                        <h3>Combat System</h3>
-                        <p>Details about the combat system will go here...</p>
+                    <section id="Damage Calculation">
+                        <h2>Damage Calculation</h2>
+                        <p>There are a lot of abilities, Items, status effects and modifiers that can alter your damage.
+                            The order in which those changes occur can affect the final damage. When hovering over an
+                            ability or an Item in-game a tooltip will appear showing the final output of any changes
+                            made to the item.</p>
 
-                        <h3>Movement System</h3>
-                        <p>Details about movement mechanics will go here...</p>
+                        <h3 id="Strength Calculation Order">Strength Calculation Order</h3>
+                        <p>Damage Bonuses from ability Modifiers purchased from M.A.I.D and items that directly affect
+                            abilities will be applied here</p>
+                        <ol>
+                            <li>
+                                <h4>Base damage</h4>
+                                <p>This is the damage written on the ability or item at which it was created</p>
+                            </li>
+                            <li>
+                                <h4>Percent Bonus</h4>
+                                <p>Items in this category are additive to eachother</p>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            Example Items will be added when I come up with more items
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4>Flat Bonus Items</h4>
+                                <p>Items or abilities that increase your damage by a flat amount</p>
+                                <b>
+                                    Example Items will be added when I come up with more items
+                                </b>
+                            </li>
+                            <li>
+                                <h4>[OVERWRITE] Items</h4>
+                                <p>Items of this set will overwrite all previous damage calculations</p>
+                                <b>
+                                    Example Items will be added when I come up with more items
+                                </b>
+                            </li>
+                            <li>
+                                <h4>Status Effects</h4>
+                                <p>+% bonuses from buffs are added together seperately then multiplied onto the current number</p>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            Buffs will be listed here...
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Buffs affect the ability/item before use. Meaning when the ability is used,
+                                            the damage for the buff will linger for the loot or item's attack duration
+                                            even if the buff runs out of time. This also means that if you apply a buff
+                                            whilst an ability/loot's attack duration it will not be applied to that
+                                            specific attack cycle.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4>Levels</h4>
+                                <p>+1% bonus for every level gained where level 0 is 0% bonus.</p>
+                            </li>
+                        </ol>
+                        <h3 id="Damage Calculation Order">Damage Calculation Order</h3>
+                        <p>The calculation for damage onHit. Each of these steps are multiplied on top of the previous
+                            step unless specified</p>
+                        <ol>
+                            <li>
+                                <h4>Ability or item's strength based on it's adjusted values</h4>
+                                <p>See <a href="#Strength Calculation Order">Strength Calculation Order</a></p>
+                            </li>
+                            <li>
+                                <h4>Critical damage multiplier</h4>
+                                <p>A critical hit will deal 100% more damage with a base 10% chance of crit onHit</p>
+                                <ul>
+                                    <li>
+                                        <b>
+                                            Example item of increasing crit damage
+                                        </b>
+                                    </li>
+                                    <li>
+                                        <b>
+                                            Your critical changce may be increased through items that provide Luck,
+                                            where luck caps at 60%
+                                        </b>
+                                    </li>
+                                    <li>
+                                        <b>
+                                            Items from the [DECRYPTED] set will prevent you from hitting crits
+                                        </b>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4>Debuff Status Effects</h4>
+                                <p>+% bonuses from buffs are added together then multiply the damage after everything else</p>
+                            </li>
+                        </ol>
 
-                        <h3>Boss Rush Mechanics</h3>
-                        <p>Details about boss encounters will go here...</p>
                     </section>
 
                     <!-- Navbox placeholder -->
