@@ -47,22 +47,80 @@
                         <div class="toc-title">Contents</div>
                         <ol class="toc-list">
                             <li><a href="#Buffs">Buffs</a>
+
                             </li>
                             <li><a href="#Debuffs">Debuffs</a>
+                                <ol>
+                                    <li><a href="#Enemy Debuffs">Enemy Debuffs</a></li>
+                                    <li><a href="#Player Debuffs">Player Debuffs</a></li>
+                                </ol>
                             </li>
                         </ol>
                     </div>
                     <!-- Article Content -->
                     <section id="Buffs">
                         <h2>Buffs</h2>
-                        <p>This page is being actively developed. Check back soon for more information about the Status
-                            Effects.</p>
+                        <table class="bufftable bufftable-buffs">
+                            <thead>
+                                <tr>
+                                    <th>Buff</th>
+                                    <th>Description</th>
+                                    <th>Stackable?</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CloudStrike</td>
+                                    <td>All GCDs are shortened by 20% when mid-air</td>
+                                    <td>No</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </section>
-                     <section id="Debuffs">
+
+                    <section id="Debuffs">
                         <h2>Debuffs</h2>
-                        <p>This page is being actively developed. Check back soon for more information about the Status
-                            Effects.</p>
+                        <section id="Enemy Debuffs">
+                            <h3>Enemy Debuffs</h3>
+                            <p>Debuffs you inflict on enemies</p>
+                            <table class="bufftable bufftable-debuffs">
+                                <thead>
+                                    <tr>
+                                        <th>Enemy Debuff</th>
+                                        <th>Description</th>
+                                        <th>Stackable?</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Lag Spike</td>
+                                        <td>Brief movement slow and delayed input feel.</td>
+                                        <td>No</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                        <section id="Player Debuffs">
+                            <h3>Player Debuffs</h3>
+                            <p>Debuffs inflicted on the player by boss mechanics.</p>
+                            <table class="bufftable bufftable-debuffs">
+                                <thead>
+                                    <tr>
+                                        <th>Player Debuff</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Lag Spike</td>
+                                        <td>Creates a clone of the entity (player, enemies, etc.) at its current location when afflicted. Upon wearing off the entity will be teleported back to that</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
                     </section>
+
+
 
                     <!-- Navbox placeholder -->
                     <div class="navbox-placeholder"></div>

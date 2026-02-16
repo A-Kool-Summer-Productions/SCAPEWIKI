@@ -10,7 +10,15 @@ html {
 }
 
 :root {
-    /* Frutiger Aero Color Palette */
+    --border-radius: 8px;
+    --border-radius-large: 12px;
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 24px;
+}
+
+/* Manual light mode override - Frutiger Aero Style */
+body[data-theme="light"] {
     --color-primary: #0078d7;
     --color-primary-light: #4da6ff;
     --color-primary-dark: #005a9e;
@@ -30,11 +38,69 @@ html {
     --color-border: rgba(0, 120, 215, 0.3);
     --color-shadow: rgba(0, 120, 215, 0.15);
 
-    --border-radius: 8px;
-    --border-radius-large: 12px;
-    --spacing-small: 8px;
-    --spacing-medium: 16px;
-    --spacing-large: 24px;
+    background:
+        repeating-linear-gradient(0deg,
+            rgba(168, 216, 234, 0.1) 0px,
+            rgba(168, 216, 234, 0.1) 2px,
+            transparent 2px,
+            transparent 4px),
+        repeating-linear-gradient(90deg,
+            rgba(168, 216, 234, 0.1) 0px,
+            rgba(168, 216, 234, 0.1) 2px,
+            transparent 2px,
+            transparent 4px),
+        linear-gradient(135deg, #a8d8ea 0%, #d4f1f4 50%, #75e6da 100%);
+}
+
+body[data-theme="light"]::before {
+    background: repeating-linear-gradient(0deg,
+            rgba(0, 0, 0, 0.02) 0px,
+            rgba(0, 0, 0, 0.02) 1px,
+            transparent 1px,
+            transparent 2px);
+}
+
+/* Manual dark mode override - Dark Frutiger Aero Style */
+body[data-theme="dark"] {
+    --color-primary: #0099ff;
+    --color-primary-light: #33b3ff;
+    --color-primary-dark: #0066cc;
+    --color-secondary: #00d9b2;
+    --color-accent: #66cc00;
+
+    --color-bg-main: #0a1628;
+    --color-bg-glass: rgba(16, 28, 45, 0.85);
+    --color-bg-sidebar: rgba(20, 35, 55, 0.9);
+    --color-bg-content: rgba(18, 30, 48, 0.95);
+
+    --color-text-primary: #e6f4ff;
+    --color-text-secondary: #99ccff;
+    --color-text-link: #33b3ff;
+    --color-text-link-hover: #66ccff;
+
+    --color-border: rgba(0, 153, 255, 0.4);
+    --color-shadow: rgba(0, 153, 255, 0.3);
+
+    background:
+        repeating-linear-gradient(0deg,
+            rgba(0, 153, 255, 0.03) 0px,
+            rgba(0, 153, 255, 0.03) 2px,
+            transparent 2px,
+            transparent 4px),
+        repeating-linear-gradient(90deg,
+            rgba(0, 153, 255, 0.03) 0px,
+            rgba(0, 153, 255, 0.03) 2px,
+            transparent 2px,
+            transparent 4px),
+        linear-gradient(135deg, #0a1628 0%, #0d1d35 50%, #0a2540 100%);
+}
+
+body[data-theme="dark"]::before {
+    background: repeating-linear-gradient(0deg,
+            rgba(0, 153, 255, 0.05) 0px,
+            rgba(0, 153, 255, 0.05) 1px,
+            transparent 1px,
+            transparent 2px);
 }
 
 /* Dark Frutiger Aero Color Scheme */
@@ -45,7 +111,7 @@ html {
         --color-primary-light: #33b3ff;
         --color-primary-dark: #0066cc;
         --color-secondary: #00d9b2;
-        --color-accent: #66cc00;
+        --color-accent: #0052cc;
 
         --color-bg-main: #0a1628;
         --color-bg-glass: rgba(16, 28, 45, 0.85);
@@ -848,79 +914,6 @@ body[data-theme="dark"] .tooltip .tooltiptext {
 }
 
 /* ==========================================
-   Feature Grid
-   ========================================== */
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-medium);
-    margin: var(--spacing-medium) 0;
-}
-
-.feature-box {
-    background: var(--color-bg-sidebar);
-    border: 3px solid var(--color-border);
-    border-radius: var(--border-radius);
-    padding: var(--spacing-medium);
-    transition: none;
-    box-shadow:
-        3px 3px 0 rgba(0, 0, 0, 0.5),
-        0 0 15px var(--color-shadow),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-}
-
-@media (prefers-color-scheme: dark) {
-    .feature-box {
-        background: var(--color-bg-sidebar);
-        border: 3px solid var(--color-primary);
-        box-shadow:
-            3px 3px 0 rgba(0, 0, 0, 0.8),
-            0 0 20px var(--color-shadow),
-            inset 0 0 15px rgba(0, 153, 255, 0.15);
-    }
-}
-
-.feature-box:hover {
-    transform: none;
-    background: var(--color-primary);
-    border-color: var(--color-accent);
-    box-shadow:
-        5px 5px 0 rgba(0, 0, 0, 0.7),
-        0 0 25px var(--color-shadow),
-        inset 0 0 20px rgba(255, 255, 255, 0.2);
-}
-
-@media (prefers-color-scheme: dark) {
-    .feature-box:hover {
-        background: var(--color-primary);
-        border-color: var(--color-accent);
-        box-shadow:
-            5px 5px 0 rgba(0, 0, 0, 1),
-            0 0 30px var(--color-primary),
-            inset 0 0 25px rgba(102, 204, 0, 0.2);
-    }
-}
-
-.feature-box h3 {
-    color: var(--color-primary);
-    margin-top: 0;
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
-}
-
-@media (prefers-color-scheme: dark) {
-    .feature-box h3 {
-        text-shadow:
-            1px 1px 0 rgba(0, 0, 0, 0.8),
-            0 0 10px var(--color-primary);
-    }
-}
-
-/* ==========================================
    Article Footer
    ========================================== */
 
@@ -1099,92 +1092,6 @@ body[data-theme="dark"] .tooltip .tooltiptext {
             0 0 15px rgba(0, 180, 216, 0.3);
         text-shadow: 0 0 8px rgba(6, 255, 165, 0.5);
     }
-}
-
-/* Manual light mode override - Frutiger Aero Style */
-body[data-theme="light"] {
-    --color-primary: #0078d7;
-    --color-primary-light: #4da6ff;
-    --color-primary-dark: #005a9e;
-    --color-secondary: #00b294;
-    --color-accent: #7fba00;
-
-    --color-bg-main: #e6f3ff;
-    --color-bg-glass: rgba(255, 255, 255, 0.75);
-    --color-bg-sidebar: rgba(255, 255, 255, 0.85);
-    --color-bg-content: rgba(255, 255, 255, 0.9);
-
-    --color-text-primary: #1a1a1a;
-    --color-text-secondary: #4a4a4a;
-    --color-text-link: #0066cc;
-    --color-text-link-hover: #003d7a;
-
-    --color-border: rgba(0, 120, 215, 0.3);
-    --color-shadow: rgba(0, 120, 215, 0.15);
-
-    background:
-        repeating-linear-gradient(0deg,
-            rgba(168, 216, 234, 0.1) 0px,
-            rgba(168, 216, 234, 0.1) 2px,
-            transparent 2px,
-            transparent 4px),
-        repeating-linear-gradient(90deg,
-            rgba(168, 216, 234, 0.1) 0px,
-            rgba(168, 216, 234, 0.1) 2px,
-            transparent 2px,
-            transparent 4px),
-        linear-gradient(135deg, #a8d8ea 0%, #d4f1f4 50%, #75e6da 100%);
-}
-
-body[data-theme="light"]::before {
-    background: repeating-linear-gradient(0deg,
-            rgba(0, 0, 0, 0.02) 0px,
-            rgba(0, 0, 0, 0.02) 1px,
-            transparent 1px,
-            transparent 2px);
-}
-
-/* Manual dark mode override - Dark Frutiger Aero Style */
-body[data-theme="dark"] {
-    --color-primary: #0099ff;
-    --color-primary-light: #33b3ff;
-    --color-primary-dark: #0066cc;
-    --color-secondary: #00d9b2;
-    --color-accent: #66cc00;
-
-    --color-bg-main: #0a1628;
-    --color-bg-glass: rgba(16, 28, 45, 0.85);
-    --color-bg-sidebar: rgba(20, 35, 55, 0.9);
-    --color-bg-content: rgba(18, 30, 48, 0.95);
-
-    --color-text-primary: #e6f4ff;
-    --color-text-secondary: #99ccff;
-    --color-text-link: #33b3ff;
-    --color-text-link-hover: #66ccff;
-
-    --color-border: rgba(0, 153, 255, 0.4);
-    --color-shadow: rgba(0, 153, 255, 0.3);
-
-    background:
-        repeating-linear-gradient(0deg,
-            rgba(0, 153, 255, 0.03) 0px,
-            rgba(0, 153, 255, 0.03) 2px,
-            transparent 2px,
-            transparent 4px),
-        repeating-linear-gradient(90deg,
-            rgba(0, 153, 255, 0.03) 0px,
-            rgba(0, 153, 255, 0.03) 2px,
-            transparent 2px,
-            transparent 4px),
-        linear-gradient(135deg, #0a1628 0%, #0d1d35 50%, #0a2540 100%);
-}
-
-body[data-theme="dark"]::before {
-    background: repeating-linear-gradient(0deg,
-            rgba(0, 153, 255, 0.05) 0px,
-            rgba(0, 153, 255, 0.05) 1px,
-            transparent 1px,
-            transparent 2px);
 }
 
 /* PC-98 Scrollbar Styling */
@@ -1715,7 +1622,7 @@ body.flash-effect {
     z-index: 10;
 }
 
-/* Reduce weirdcore intensity on mobile */
+/* Reduced intensity on mobile */
 @media (max-width: 768px) {
     .weirdcore-container {
         opacity: 0.2;
@@ -1775,4 +1682,238 @@ body.flash-effect {
 
 .horizontal-table tr:last-child td {
     border-bottom: none;
+}
+
+/*========================================== 
+   Buff and debuff tables
+   ========================================== */
+.bufftable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0.8rem 0 1.6rem;
+    font-size: 0.95rem;
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+    background: var(--color-bg-content);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-border);
+    box-shadow:
+        0 4px 12px var(--color-shadow),
+        0 2px 4px var(--color-shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.bufftable th {
+    background: linear-gradient(180deg,
+            var(--color-primary) 0%,
+            var(--color-primary-dark) 100%);
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0.7rem 0.9rem;
+    text-align: left;
+    letter-spacing: 0.04em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bufftable th:last-child {
+    border-right: none;
+}
+
+.bufftable td {
+    background: var(--color-bg-glass);
+    color: var(--color-text-primary);
+    padding: 0.65rem 0.9rem;
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.bufftable td:last-child {
+    border-right: none;
+}
+
+.bufftable tr:last-child td {
+    border-bottom: none;
+}
+
+
+.bufftable-buffs {
+    box-shadow:
+        0 0 14px rgba(120, 255, 220, 0.14),
+        0 4px 12px var(--color-shadow),
+        0 2px 4px var(--color-shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.bufftable-buffs th {
+    background: linear-gradient(180deg,
+            rgba(80, 210, 190, 0.95) 0%,
+            rgba(40, 120, 140, 0.95) 100%);
+    color: #f2fffb;
+}
+
+.bufftable-buffs td {
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.86) 0%,
+            rgba(230, 255, 248, 0.88) 100%);
+}
+
+.bufftable-debuffs {
+    box-shadow:
+        0 0 14px rgba(255, 120, 170, 0.14),
+        0 4px 12px var(--color-shadow),
+        0 2px 4px var(--color-shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.bufftable-debuffs th {
+    background: linear-gradient(180deg,
+            rgba(220, 120, 160, 0.95) 0%,
+            rgba(160, 90, 60, 0.95) 100%);
+    color: #fff0f6;
+}
+
+.bufftable-debuffs td {
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.86) 0%,
+            rgba(255, 236, 244, 0.9) 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) .bufftable {
+        background: var(--color-bg-glass);
+        border: 1px solid rgba(0, 153, 255, 0.35);
+        box-shadow:
+            0 6px 18px rgba(0, 0, 0, 0.4),
+            0 0 18px var(--color-shadow),
+            inset 0 0 20px rgba(0, 153, 255, 0.12);
+    }
+
+    body:not([data-theme="light"]) .bufftable th {
+        background: linear-gradient(180deg,
+                rgba(0, 136, 204, 0.95) 0%,
+                rgba(0, 92, 170, 0.95) 100%);
+        border-right: 1px solid rgba(255, 255, 255, 0.12);
+        text-shadow: 0 0 8px rgba(0, 153, 255, 0.35);
+    }
+
+    body:not([data-theme="light"]) .bufftable td {
+        background: linear-gradient(180deg,
+                rgba(16, 28, 45, 0.95) 0%,
+                rgba(20, 35, 55, 0.9) 100%);
+        color: var(--color-text-primary);
+        border-right: 1px solid rgba(0, 153, 255, 0.25);
+        border-bottom: 1px solid rgba(0, 153, 255, 0.25);
+    }
+
+    body:not([data-theme="light"]) .bufftable-buffs {
+        box-shadow:
+            0 0 18px rgba(0, 217, 178, 0.25),
+            0 6px 18px rgba(0, 0, 0, 0.4),
+            inset 0 0 18px rgba(0, 217, 178, 0.15);
+    }
+
+    body:not([data-theme="light"]) .bufftable-buffs th {
+        background: linear-gradient(180deg,
+                rgba(0, 200, 170, 0.95) 0%,
+                rgba(0, 120, 120, 0.95) 100%);
+        color: #e9fff8;
+    }
+
+    body:not([data-theme="light"]) .bufftable-buffs td {
+        background: linear-gradient(180deg,
+                rgba(14, 40, 42, 0.95) 0%,
+                rgba(18, 52, 50, 0.9) 100%);
+        color: var(--color-text-primary);
+    }
+
+    body:not([data-theme="light"]) .bufftable-debuffs {
+        box-shadow:
+            0 0 18px rgba(255, 120, 170, 0.25),
+            0 6px 18px rgba(0, 0, 0, 0.4),
+            inset 0 0 18px rgba(255, 120, 170, 0.15);
+    }
+
+    body:not([data-theme="light"]) .bufftable-debuffs th {
+        background: linear-gradient(180deg,
+                rgba(210, 90, 130, 0.95) 0%,
+                rgba(130, 60, 80, 0.95) 100%);
+        color: #ffe6f0;
+    }
+
+    body:not([data-theme="light"]) .bufftable-debuffs td {
+        background: linear-gradient(180deg,
+                rgba(40, 20, 32, 0.95) 0%,
+                rgba(58, 26, 40, 0.9) 100%);
+        color: var(--color-text-primary);
+    }
+}
+
+body[data-theme="dark"] .bufftable {
+    background: var(--color-bg-glass);
+    border: 1px solid rgba(0, 153, 255, 0.35);
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.4),
+        0 0 18px var(--color-shadow),
+        inset 0 0 20px rgba(0, 153, 255, 0.12);
+}
+
+body[data-theme="dark"] .bufftable th {
+    background: linear-gradient(180deg,
+            rgba(0, 136, 204, 0.95) 0%,
+            rgba(0, 92, 170, 0.95) 100%);
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    text-shadow: 0 0 8px rgba(0, 153, 255, 0.35);
+}
+
+body[data-theme="dark"] .bufftable td {
+    background: linear-gradient(180deg,
+            rgba(16, 28, 45, 0.95) 0%,
+            rgba(20, 35, 55, 0.9) 100%);
+    color: var(--color-text-primary);
+    border-right: 1px solid rgba(0, 153, 255, 0.25);
+    border-bottom: 1px solid rgba(0, 153, 255, 0.25);
+}
+
+body[data-theme="dark"] .bufftable-buffs {
+    box-shadow:
+        0 0 18px rgba(0, 217, 178, 0.25),
+        0 6px 18px rgba(0, 0, 0, 0.4),
+        inset 0 0 18px rgba(0, 217, 178, 0.15);
+}
+
+body[data-theme="dark"] .bufftable-buffs th {
+    background: linear-gradient(180deg,
+            rgba(0, 200, 170, 0.95) 0%,
+            rgba(0, 120, 120, 0.95) 100%);
+    color: #e9fff8;
+}
+
+body[data-theme="dark"] .bufftable-buffs td {
+    background: linear-gradient(180deg,
+            rgba(14, 40, 42, 0.95) 0%,
+            rgba(18, 52, 50, 0.9) 100%);
+    color: var(--color-text-primary);
+}
+
+body[data-theme="dark"] .bufftable-debuffs {
+    box-shadow:
+        0 0 18px rgba(255, 120, 170, 0.25),
+        0 6px 18px rgba(0, 0, 0, 0.4),
+        inset 0 0 18px rgba(255, 120, 170, 0.15);
+}
+
+body[data-theme="dark"] .bufftable-debuffs th {
+    background: linear-gradient(180deg,
+            rgba(210, 90, 130, 0.95) 0%,
+            rgba(130, 60, 80, 0.95) 100%);
+    color: #ffe6f0;
+}
+
+body[data-theme="dark"] .bufftable-debuffs td {
+    background: linear-gradient(180deg,
+            rgba(40, 20, 32, 0.95) 0%,
+            rgba(58, 26, 40, 0.9) 100%);
+    color: var(--color-text-primary);
 }
