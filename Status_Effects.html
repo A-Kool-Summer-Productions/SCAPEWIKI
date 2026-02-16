@@ -46,9 +46,7 @@
                     <div class="toc">
                         <div class="toc-title">Contents</div>
                         <ol class="toc-list">
-                            <li><a href="#Buffs">Buffs</a>
-
-                            </li>
+                            <li><a href="#Buffs">Buffs</a></li>
                             <li><a href="#Debuffs">Debuffs</a>
                                 <ol>
                                     <li><a href="#Enemy Debuffs">Enemy Debuffs</a></li>
@@ -70,6 +68,22 @@
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td>Firewall</td>
+                                    <td>
+                                       <strong>Absorbs damage once.</strong> <br>
+                                        While active Enemies near you will be afflicted with <a href="#Exposed">Exposed</a>
+                                        </td>
+                                    <td>No</td>
+                                </tr>
+                                <tr>
+                                    <td id="Overclocked">Overclocked</td>
+                                    <td>All GCDs are shortened by 30%. Deal 30% more damage.<br>
+                                        <strong>Cannot receive other buffs while active. Cannot be refreshed until it
+                                            expires.</strong>
+                                    </td>
+                                    <td>No</td>
+                                </tr>
+                                <tr>
                                     <td>CloudStrike</td>
                                     <td>All GCDs are shortened by 20% when mid-air</td>
                                     <td>No</td>
@@ -77,7 +91,6 @@
                             </tbody>
                         </table>
                     </section>
-
                     <section id="Debuffs">
                         <h2>Debuffs</h2>
                         <section id="Enemy Debuffs">
@@ -92,11 +105,58 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <!--Affecting Damage Calculations-->
                                     <tr>
-                                        <td>Lag Spike</td>
-                                        <td>Brief movement slow and delayed input feel.</td>
+                                        <td>Corruption</td>
+                                        <td>Afflicted enemies take 10% extra damage</td>
+                                        <td>Yes</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Overheat</td>
+                                        <td>Explodes after 5s for AoE damage based on damage taken. <br>
+                                            3 stacks of overheat turns this buff into Meltdown</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Meltdown</td>
+                                        <td>After 4s, deals 30% of damage taken as one hit</td>
                                         <td>No</td>
                                     </tr>
+
+                                    <!--DOT-->
+                                    <tr>
+                                        <td>Data Rot</td>
+                                        <td>Afflicted enemies receive damage once per second</td>
+                                        <td>Yes</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Memory Leak</td>
+                                        <td>Deals damage once per second. Damage increases over time if not refreshed.
+                                        </td>
+                                        <td>Yes</td>
+                                    </tr>
+                                    <!--Conditional Flat Damage-->
+                                    <tr>
+                                        <td id="Exposed">Exposed</td>
+                                        <td>Hitting exposed enemies with abilities or loot deals additional damage. <br>
+                                            The additional damage is reduced for allies.</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Global Exposure</td>
+                                        <td>Hitting exposed enemies with abilities or loot deals additional damage.</td>
+                                        <td>No</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Stack Overflow</td>
+                                        <td>3 seconds after the first stack is applied deals damage per stack and
+                                            removes all stacks
+                                        </td>
+                                        <td>Yes</td>
+                                    </tr>
+
                                 </tbody>
                             </table>
                         </section>
@@ -113,7 +173,9 @@
                                 <tbody>
                                     <tr>
                                         <td>Lag Spike</td>
-                                        <td>Creates a clone of the entity (player, enemies, etc.) at its current location when afflicted. Upon wearing off the entity will be teleported back to that</td>
+                                        <td>Creates a clone of the entity (player, enemies, etc.) at its current
+                                            location when afflicted. Upon wearing off the entity will be teleported back
+                                            to that clone's location</td>
                                     </tr>
                                 </tbody>
                             </table>
