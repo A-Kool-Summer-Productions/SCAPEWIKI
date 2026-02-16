@@ -33,8 +33,10 @@ class TemplateLoader {
 
         // Initialize theme
         const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            body.setAttribute('data-theme', savedTheme);
+        const initialTheme = savedTheme || body.getAttribute('data-theme') || 'light';
+        body.setAttribute('data-theme', initialTheme);
+        if (!savedTheme) {
+            localStorage.setItem('theme', initialTheme);
         }
         this.updateButtonText();
 
