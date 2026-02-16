@@ -23,7 +23,7 @@ body[data-theme="light"] {
     --color-primary-light: #4da6ff;
     --color-primary-dark: #005a9e;
     --color-secondary: #00b294;
-    --color-accent: #03dbb7;
+    --color-accent: #00b4ba;
 
     --color-bg-main: #e6f3ff;
     --color-bg-glass: rgba(255, 255, 255, 0.75);
@@ -66,7 +66,7 @@ body[data-theme="dark"] {
     --color-primary-light: #33b3ff;
     --color-primary-dark: #0066cc;
     --color-secondary: #00d9b2;
-    --color-accent: #03dbb7;
+    --color-accent: #00b4ba;
 
     --color-bg-main: #0a1628;
     --color-bg-glass: rgba(16, 28, 45, 0.85);
