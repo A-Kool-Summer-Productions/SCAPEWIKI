@@ -1394,7 +1394,7 @@ body.flash-effect {
     background: var(--color-bg-glass);
     color: var(--color-text-primary);
     padding: 10px 16px;
-    text-align: center;
+    text-align: left;
     font-size: 14px;
     border-right: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
