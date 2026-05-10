@@ -1,0 +1,31 @@
+1 = Primary
+2 = Secondary
+3 = Special
+4 = Defensive
+
+a = Modifier1 ()
+b = Modifier2 ()
+c = Modifier3 ()
+d = Modifier4 ()
+e = Modifier5 () --I dont have a Modifier5 Category yet I intend on it being additional content later
+When modifiers change stats it will be specified otherwise they dont change them
+-----------------------
+1: Shoot a beam toward your cursor position.
+Your refraction fires a duplicate beam from its position.
+Dmg: 60 (x2) GCD: 1.2 CD: 0
+
+--------------------------------------------------
+2: Anchor your refraction to your cursor position.
+Creates an explosion when it hits a surface or reaches max range.
+Reduces your Special cooldown by 4 seconds each use.
+Dmg: 250 GCD: 1.2 CD: 8 Max Uses: 2
+
+-----------------------------------------------------
+3: Create a cylinder around you that explodes outward and hits all targets in range.
+Your refraction prism replicates the beam column from its current position.
+Dmg: 350 (x2) GCD: 1.2 CD: 20
+
+-----------------------------------------------------
+4: Call your refraction back to your position.
+Upon return, gain brief invulnerability and immediately reset your dash cooldown.
+CD: 12

@@ -1,0 +1,32 @@
+1 = Primary
+2 = Secondary
+3 = Special
+4 = Defensive
+
+a = Modifier1 ()
+b = Modifier2 ()
+c = Modifier3 ()
+d = Modifier4 ()
+e = Modifier5 () --I dont have a Modifier5 Category yet I intend on it being additional content later
+When modifiers change stats it will be specified otherwise they dont change them
+-----------------------
+1: Shoots a rocket that deals damage in a moderate radius around the hit position.
+Explosions deal a large amount of knockback to the user.
+Dmg: 150 GCD: 1.4 CD: 0
+
+--------------------------------------------------
+2: Throws a bomb in the direction your camera is facing.
+It sticks to surfaces and explodes after 3 seconds.
+Explosions deal a large amount of knockback to the user.
+Dmg: 300 GCD: 1.2 CD: 6 Max Uses: 2
+
+-----------------------------------------------------
+3: Leap into the air and throw two sets of 5 bombs.
+Bombs explode shortly after embedding into the first target or surface they touch.
+Explosions deal a large amount of knockback to the user.
+Dmg: 25 (x5) GCD: 1.2 CD: 12
+
+-----------------------------------------------------
+4: Gain brief invulnerability and hover during activation.
+Grants all allies CloudStrike for 5 seconds.
+CD: 15

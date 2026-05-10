@@ -1,0 +1,51 @@
+CLASS NAME: Conductor
+
+1 = Primary
+2 = Secondary
+3 = Special
+4 = Defensive
+
+a = Modifier1 Primary
+b = Modifier2 Charges
+c = Modifier3 Chain
+d = Modifier4 Buff
+e = Modifier5 --Optional future modifier slot
+When modifiers change stats it will be specified otherwise they dont change them
+
+Passive - You have a charge amount displayed like a battery. 
+Every three charges you gain a special use.
+-----------------------
+1: Shock your target three times.
+Dmg:40(x3) GCD:0.5s CD:0
+
+1a: Primary Modifier1 effect
+
+1b: On hit, receive 1 charge to your battery.
+Gains 3 uses per cooldown
+CD: 5 Max Uses: 3 
+
+1c: 
+
+1d: 
+--------------------------------------------------
+2: Rub your hands together to gives you 2 charges
+Dmg:0  GCD:0.8  CD:2
+2a: Empowers your next primary to do 1.5x damage
+2b: 
+2c: 
+2d: 
+-----------------------------------------------------
+3: Cast a lightning bolt from your hands that penetrates targets This ability does not have a cooldown, Instead it gains uses from other sources.
+Dmg: 350 GCD: 1.5  CD:0  Max Uses: 3
+3a: 
+3b: Now has 12 uses
+3c: 
+3d: 
+-----------------------------------------------------
+4: Gain brief invulnerability and teleport a large distance.
+CD:15
+4a: 
+4b: 
+4c: 
+4d: 
+

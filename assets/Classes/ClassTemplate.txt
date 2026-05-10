@@ -1,0 +1,47 @@
+CLASS NAME: ClassName
+
+1 = Primary
+2 = Secondary
+3 = Special
+4 = Defensive
+
+a = Modifier1 (Short Name)
+b = Modifier2 
+c = Modifier3 
+d = Modifier4 
+e = Modifier5 --Optional future modifier slot
+When modifiers change stats it will be specified otherwise they dont change them
+-----------------------
+1: Primary ability description
+Dmg: Value GCD: Value CD: Value Max Uses: Value if applicable
+
+1a: Primary Modifier1 effect
+1b: 
+1c: 
+1d: 
+1e: 
+--------------------------------------------------
+2: 
+Dmg:  GCD:  CD:  Max Uses: 
+2a: 
+2b: 
+2c: 
+2d: 
+2e: 
+-----------------------------------------------------
+3: 
+Dmg:  GCD:  CD:  Max Uses: 
+3a: 
+3b: 
+3c: 
+3d: 
+3e: 
+-----------------------------------------------------
+4: 
+Dmg:  GCD:  CD:  Max Uses: 
+4a: 
+4b: 
+4c: 
+4d: 
+4e: 
+
