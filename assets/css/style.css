@@ -523,6 +523,15 @@ body[data-theme="dark"] .tooltip .tooltiptext {
     max-width: 800px;
 }
 
+.ability-box > div:first-child {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.ability-box > div:last-child {
+    flex: 0 0 150px;
+}
+
 
 
 .ability-icon {
