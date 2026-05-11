@@ -1680,3 +1680,92 @@ body[data-theme="dark"] .bufftable-debuffs td {
             rgba(58, 26, 40, 0.9) 100%);
     color: var(--color-text-primary);
 }
+
+/* ===================== Gallery ===================== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--spacing-large);
+    margin-top: var(--spacing-large);
+}
+
+.gallery-item {
+    background: var(--color-bg-glass);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    backdrop-filter: blur(8px);
+}
+
+.gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px var(--color-shadow);
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
+}
+
+.gallery-caption {
+    padding: var(--spacing-small) var(--spacing-medium);
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: var(--spacing-large);
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-caption {
+    margin-top: var(--spacing-medium);
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: var(--spacing-large);
+    right: var(--spacing-large);
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.15s;
+}
+
+.lightbox-close:hover {
+    opacity: 1;
+}
