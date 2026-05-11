@@ -1,5 +1,6 @@
 CLASS NAME: Conductor
 
+
 1 = Primary
 2 = Secondary
 3 = Special
@@ -12,40 +13,82 @@ d = Modifier4 Buff
 e = Modifier5 --Optional future modifier slot
 When modifiers change stats it will be specified otherwise they dont change them
 
-Passive - You have a charge amount displayed like a battery. 
-Every three charges you gain a special use.
+
 -----------------------
-1: Shock your target three times.
+1: Ion Burst - Shock your target three times.
 Dmg:40(x3) GCD:0.5s CD:0
 
-1a: Primary Modifier1 effect
+1a: Deals damage in a significantly larger radius near the user. but now consumes 2 charge per use
+Damage is much higher
+Without charge damage is reduced to initial amount
+Dmg: 120(x3)
 
-1b: On hit, receive 1 charge to your battery.
+1b: Receive 1 charge per hit.
 Gains 3 uses per cooldown
 CD: 5 Max Uses: 3 
 
-1c: 
+1c: chains damage to the close enemies.
+If there is only one enemy, deals damage to them twice.
+Dmg:40(x6)[single target]
 
-1d: 
+1d: Damage is reduced, but number of hits is increased
+Grants a burst of speed when used
+Dmg: 30(x5)
 --------------------------------------------------
-2: Rub your hands together to gives you 2 charges
+2: Static Charges - Rub your hands together to gives you 2 charges
+hold a maximum 15 charges.
 Dmg:0  GCD:0.8  CD:2
-2a: Empowers your next primary to do 1.5x damage
-2b: 
-2c: 
-2d: 
+
+2a: Primary use now triggers an additional lightning strike on the target when holding maximum charges. 
+Loot and status affecting the secondary will change the lightning strike's damage
+Dmg: 300
+
+2b: gain 4 charges per use.
+Now has a maximum of 36 Charges
+
+2c: Stops all movement get struck by lightning and get 12 charges
+Now deals damage to around the user.
+Longer Cooldown.
+Dmg: 250 CD: 8
+
+2d: Rub your hands together Now only gives you 1 charge.
+Grants a burst of speed when used
+No longer has a cooldown
+CD: 0
+
 -----------------------------------------------------
-3: Cast a lightning bolt from your hands that penetrates targets This ability does not have a cooldown, Instead it gains uses from other sources.
-Dmg: 350 GCD: 1.5  CD:0  Max Uses: 3
-3a: 
-3b: Now has 12 uses
-3c: 
-3d: 
+3: Lightning Strike - Cast a lightning bolt where you're facing in a line that penetrates targets
+This ability does not have a cooldown, 
+Instead it consumes 3 charges per use
+Dmg: 350 GCD: 1.5  CD:0
+
+3a: Instant Casting allows you to use this ability extremely fast. 
+GCD: 0.3s 
+
+3b: Consumes all charges upon use and deals damage multiplied by the amount of charges you currently have.
+Width is significantly larger, 
+GCD is longer
+DMG:200 GCD:3
+
+3c: Deals slightly more damage, lightning bolt comes from the skies and does damage in a moderate area around your target.
+Now consumes 4 charges per use
+Dmg: 380 GCD: 1
+
+3d: You punch your target creating a small short-ranged field of lightning instead of a bolt.
+Deals significantly more damage, No longer casts a lightning bolt.
+Dmg: 750 GCD:0.8
 -----------------------------------------------------
-4: Gain brief invulnerability and teleport a large distance.
+4: Gain brief invulnerability and teleport a moderate distance.
 CD:15
-4a: 
-4b: 
-4c: 
-4d: 
+4a: Cooldown is reduced and teleport distance is greatly increased.
+CD:10
+
+4b: Cooldown is much longer but can be casted off Cooldown for 6 charges.
+Casting the ability whatsoever resets the cooldown timer.
+CD: 35s
+
+4c: Teleporting will leave a lightning clone that explodes and deals damage equal to your Special's damage 
+
+4d: Grant self and nearby allies brief invulnerability and Empower.exe for 8s
+No longer teleports.
 
