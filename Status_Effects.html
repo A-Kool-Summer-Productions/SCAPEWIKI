@@ -66,88 +66,7 @@
                                     <th>Stackable?</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Firewall</td>
-                                    <td>
-                                        <strong>Absorbs damage once.</strong> <br>
-                                        While active Enemies near you will be afflicted with <a
-                                            href="#Exposed">Exposed</a>
-                                    </td>
-                                    <td>No</td>
-                                </tr>
-                                <tr>
-                                    <td id="Overclocked">Overclocked</td>
-                                    <td>All GCDs are shortened by 30%. Deal 30% more damage.<br>
-                                        <strong>Cannot receive other buffs while active. Cannot be refreshed until it
-                                            expires.</strong>
-                                    </td>
-                                    <td>No</td>
-                                </tr>
-                                <tr>
-                                    <td>Defragged</td>
-                                    <td>All GCDs are shortened by 20%. Movement speed is increased</td>
-                                    <td>Yes</td>
-                                </tr>
-                                <tr>
-                                    <td>CloudStrike</td>
-                                    <td>All GCDs are shortened by 20% and deal 10% extra damage when mid-air</td>
-                                    <td>No</td>
-                                </tr>
-                                <tr>
-                                    <td>Spoofed</td>
-                                    <td>Become Invulnerable until you use an attack.
-                                    <td>No</td>
-                                </tr>
-                                <tr>
-                                    <td>Amplify.exe</td>
-                                    <td>Deal 10% more damage</td>
-                                    <td>Yes</td>
-                                </tr>
-                                <tr>
-                                    <td>Empower.exe</td>
-                                    <td>Deal 20% more damage</td>
-                                    <td>No</td>
-                                </tr>
-                                <tr>
-                                    <td>Maximize.exe</td>
-                                    <td>Deal 30% more damage</td>
-                                    <td>Yes</td>
-                                </tr>
-                                <tr>
-                                    <td>Primary Cache</td>
-                                    <td>Your Primary deals 70% more damage</td>
-                                    <td>No</td>
-                                </tr>
-                                <tr>
-                                    <td>Secondary Cache</td>
-                                    <td>Your Secondary deals 70% more damage</td>
-                                    <td>No</td>
-                                </tr>
-                                <tr>
-                                    <td>Special Cache</td>
-                                    <td>Your Special deals 70% more damage</td>
-                                    <td>No</td>
-                                </tr>
-                                <tr>
-                                    <td>Primary Buffer</td>
-                                    <td>Your next Primary deals 150% more damage. Wears off when you use an attack.</td>
-                                    <td>No</td>
-                                </tr>
-                                <tr>
-                                    <td>Secondary Buffer</td>
-                                    <td>Your next Secondary deals 150% more damage. Wears off when you use an attack.
-                                    </td>
-                                    <td>No</td>
-                                </tr>
-                                <tr>
-                                    <td>Special Buffer</td>
-                                    <td>Your next Special deals 150% more damage. Wears off when you use an attack.</td>
-                                    <td>No</td>
-                                </tr>
-                                
-
-                            </tbody>
+                            <tbody id="buffs-table-body"></tbody>
                         </table>
                     </section>
                     <section id="Debuffs">
@@ -163,60 +82,7 @@
                                         <th>Stackable?</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <!--Affecting Damage Calculations-->
-                                    <tr>
-                                        <td>Corruption</td>
-                                        <td>Afflicted enemies take 10% extra damage</td>
-                                        <td>Yes</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Overheat</td>
-                                        <td>Explodes after 5s for AoE damage based on damage taken. <br>
-                                            3 stacks of overheat turns this buff into Meltdown</td>
-                                        <td>Yes</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Meltdown</td>
-                                        <td>After 4s, deals 30% of damage taken as one hit</td>
-                                        <td>No</td>
-                                    </tr>
-
-                                    <!--DOT-->
-                                    <tr>
-                                        <td>Data Rot</td>
-                                        <td>Afflicted enemies receive damage once per second</td>
-                                        <td>Yes</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Memory Leak</td>
-                                        <td>Deals damage once per second. Damage increases over time if not refreshed.
-                                        </td>
-                                        <td>Yes</td>
-                                    </tr>
-                                    <!--Conditional Flat Damage-->
-                                    <tr>
-                                        <td id="Exposed">Exposed</td>
-                                        <td>Hitting exposed enemies with abilities or loot deals additional damage. <br>
-                                            The additional damage is reduced for allies.</td>
-                                        <td>Yes</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Global Exposure</td>
-                                        <td>Hitting exposed enemies with abilities or loot deals additional damage.</td>
-                                        <td>No</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Stack Overflow</td>
-                                        <td>3 seconds after the first stack is applied deals damage per stack and
-                                            removes all stacks
-                                        </td>
-                                        <td>Yes</td>
-                                    </tr>
-
-                                </tbody>
+                                <tbody id="enemy-debuffs-table-body"></tbody>
                             </table>
                         </section>
                         <section id="Player Debuffs">
@@ -229,14 +95,7 @@
                                         <th>Description</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Lag Spike</td>
-                                        <td>Creates a clone of the entity (player, enemies, etc.) at its current
-                                            location when afflicted. Upon wearing off the entity will be teleported back
-                                            to that clone's location</td>
-                                    </tr>
-                                </tbody>
+                                <tbody id="player-debuffs-table-body"></tbody>
                             </table>
                         </section>
                     </section>

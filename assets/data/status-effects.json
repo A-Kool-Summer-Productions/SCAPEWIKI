@@ -1,0 +1,166 @@
+{
+    "statusEffects": {
+        "firewall": {
+            "name": "Firewall",
+            "category": "buff",
+            "descriptionHtml": "<strong>Absorbs damage once.</strong><br>While active enemies near you will be afflicted with <a href=\"#exposed\">Exposed</a>",
+            "description": "Absorbs damage once. While active enemies near you will be afflicted with Exposed.",
+            "stackable": false,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "cloudstrike": {
+            "name": "CloudStrike",
+            "category": "buff",
+            "description": "All GCDs are shortened by 20% and deal 10% extra damage when mid-air.",
+            "stackable": false,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "overclocked": {
+            "name": "Overclocked",
+            "category": "buff",
+            "description": "All GCDs are shortened by 30% and you deal 30% more damage. Cannot receive other buffs while active and cannot be refreshed until it expires.",
+            "stackable": false,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "defragged": {
+            "name": "Defragged",
+            "category": "buff",
+            "description": "All GCDs are shortened by 20%. Movement speed is increased.",
+            "stackable": true,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "spoofed": {
+            "name": "Spoofed",
+            "category": "buff",
+            "description": "Become invulnerable until you use an attack.",
+            "stackable": false,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "amplifyexe": {
+            "name": "Amplify.exe",
+            "category": "buff",
+            "description": "Deal 10% more damage.",
+            "stackable": true,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "empowerexe": {
+            "name": "Empower.exe",
+            "category": "buff",
+            "description": "Deal 20% more damage.",
+            "stackable": false,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "maximizeexe": {
+            "name": "Maximize.exe",
+            "category": "buff",
+            "description": "Deal 30% more damage.",
+            "stackable": true,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "primarycache": {
+            "name": "Primary Cache",
+            "category": "buff",
+            "description": "Your Primary deals 70% more damage.",
+            "stackable": false,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "secondarycache": {
+            "name": "Secondary Cache",
+            "category": "buff",
+            "description": "Your Secondary deals 70% more damage.",
+            "stackable": false,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "specialcache": {
+            "name": "Special Cache",
+            "category": "buff",
+            "description": "Your Special deals 70% more damage.",
+            "stackable": false,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "primarybuffer": {
+            "name": "Primary Buffer",
+            "category": "buff",
+            "description": "Your next Primary deals 150% more damage. Wears off when you use an attack.",
+            "stackable": false,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "secondarybuffer": {
+            "name": "Secondary Buffer",
+            "category": "buff",
+            "description": "Your next Secondary deals 150% more damage. Wears off when you use an attack.",
+            "stackable": false,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "specialbuffer": {
+            "name": "Special Buffer",
+            "category": "buff",
+            "description": "Your next Special deals 150% more damage. Wears off when you use an attack.",
+            "stackable": false,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "corruption": {
+            "name": "Corruption",
+            "category": "enemyDebuff",
+            "description": "Afflicted enemies take 10% extra damage.",
+            "stackable": true,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "overheat": {
+            "name": "Overheat",
+            "category": "enemyDebuff",
+            "descriptionHtml": "Explodes after 5s for AoE damage based on damage taken.<br>3 stacks of overheat turns this buff into Meltdown.",
+            "description": "Explodes after 5s for AoE damage based on damage taken. 3 stacks of overheat turns this buff into Meltdown.",
+            "stackable": true,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "meltdown": {
+            "name": "Meltdown",
+            "category": "enemyDebuff",
+            "description": "After 4s, deals 30% of damage taken as one hit.",
+            "stackable": false,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "datarot": {
+            "name": "Data Rot",
+            "category": "enemyDebuff",
+            "description": "Afflicted enemies receive damage once per second.",
+            "stackable": true,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "memoryleak": {
+            "name": "Memory Leak",
+            "category": "enemyDebuff",
+            "description": "Deals damage once per second. Damage increases over time if not refreshed.",
+            "stackable": true,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "exposed": {
+            "name": "Exposed",
+            "category": "enemyDebuff",
+            "description": "Hitting exposed enemies with abilities or loot deals additional damage. The additional damage is reduced for allies.",
+            "stackable": true,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "globalexposure": {
+            "name": "Global Exposure",
+            "category": "enemyDebuff",
+            "description": "Hitting exposed enemies with abilities or loot deals additional damage.",
+            "stackable": false,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "stackoverflow": {
+            "name": "Stack Overflow",
+            "category": "enemyDebuff",
+            "description": "3 seconds after the first stack is applied deals damage per stack and removes all stacks.",
+            "stackable": true,
+            "icon": "assets/images/icons/blank.png"
+        },
+        "lagspike": {
+            "name": "Lag Spike",
+            "category": "playerDebuff",
+            "description": "Creates a clone of the entity (player, enemies, etc.) at its current location when afflicted. Upon wearing off the entity will be teleported back to that clone's location.",
+            "icon": "assets/images/icons/blank.png"
+        }
+    }
+}
